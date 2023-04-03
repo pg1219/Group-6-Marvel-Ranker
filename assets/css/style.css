@@ -1,21 +1,22 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* <div class="select is-multiple">
+  <select multiple size="8">
+    <option value="Rocket">Rocket</option>
+    <option value="Thanos">Thanos</option>
+    <option value="Green Goblin">Green Goblin</option>
+    <option value="Groot">Groot</option>
+    <option value="Gamora">Gamora</option>
+    <option value="Scarlett Witch">Scarlett Witch</option>
+    <option value="Loki">Loki</option>
+    <option value="Ant Man">Ant Man</option>
+    <option value="Hulk">Hulk</option>
+    <option value="Black Panther">Black Panther</option>
+    <option value="Black Widow">Black Widow</option>
+    <option value="Spider Man">Spider Man</option>
+    <option value="Thor">Thor</option>
+    <option value="Iron Man">Iron Man</option>
+    <option value="Captain America">Captain America</option>
+  </select>
+</div> */
 
 /* we want: progress bar, dropdown OR table to count from 1 - 15 */
 
@@ -25,6 +26,4 @@
 
 /* generate button: 15 items from GIPHY api in any order */
 
-
 /* media query: flex-direction: column; */
-
