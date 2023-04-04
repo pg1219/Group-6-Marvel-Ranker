@@ -1,3 +1,4 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
 /* <div class="select is-multiple">
 <select multiple size="8">
@@ -19,24 +20,17 @@
 </select>
 </div> */
 
+/* we want: progress bar, dropdown OR table to count from 1 - 15 */
 
+/* 2 cards
+    left: choose character
+    right: generate giph */
 
+/* generate button: 15 items from GIPHY api in any order */
 
+/* media query: flex-direction: column; */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* media query: flex-direction: column; */
 
 /* we want: progress bar, dropdown OR table to count from 1 - 15 */
 
@@ -46,10 +40,6 @@
 
 /* generate button: 15 items from GIPHY api in any order */
 
-
-
-/* media query: flex-direction: column; */
-=======
 /* media query: flex-direction: column; */
 
-
+/* media query: flex-direction: column; */
