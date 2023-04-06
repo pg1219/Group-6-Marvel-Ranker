@@ -45,4 +45,8 @@ function getCharsApi() {
       }
     });
 }
+
 fetchCharsButton.addEventListener("click", getCharsApi);
+
+var marvelUrl =
+  "https://api.giphy.com/v1/gifs/random?api_key=7saPLMk09bQDFKz96FN2CCcwFpfGlp84&tag=marvel&rating=g";
