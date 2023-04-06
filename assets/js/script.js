@@ -38,7 +38,7 @@
  
        var imageItem = document.createElement('img');
        imageItem.style.width= '100px';
-       imageItem.src =  imageList.thumbnail.path  + "."+ imageList.thumbnail.extension;
+       imageItem.src =  imageList.thumbnail.path  + "." + imageList.thumbnail.extension;
        
        charItem.append(imageItem);
        
@@ -46,4 +46,8 @@
     
    })
  }
- fetchCharsButton.addEventListener('click', getCharsApi)
+
+ fetchCharsButton.addEventListener('click', getCharsApi);
+ 
+
+ var marvelUrl = "https://api.giphy.com/v1/gifs/random?api_key=7saPLMk09bQDFKz96FN2CCcwFpfGlp84&tag=marvel&rating=g"
