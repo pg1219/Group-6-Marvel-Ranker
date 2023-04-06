@@ -1,26 +1,38 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
-/* <div class="select is-multiple">
-<select multiple size="8">
-  <option value="Captain America">Captain America</option>
-  <option value=" Iron Man"> Iron Man</option>
-  <option value="Thor">Thor</option>
-  <option value="Spider Man">Spider Man</option>
-  <option value="Black Widow">Black Widow</option>
-  <option value="Black Panther">Black Panther</option>
-  <option value="Hulk">Hulk</option>
-  <option value="Ant Man">Ant Man</option>
-  <option value="Loki">Loki</option>
-  <option value="Scarlett Witch">Scarlett Witch</option>
-  <option value="Gamora">Gamora</option>
-  <option value="Green Goblin">Green Goblin</option>
-  <option value="Thanos">Thanos</option>
-  <option value="Groot">Groot</option>
-  <option value="Rocket">Rocket</option>
-</select>
-</div> */
 
-/* we want: progress bar, dropdown OR table to count from 1 - 15 */
+/* .container-right{
+    margin-right: 0;
+
+
+} */
+section{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1{
+    font-size:larger;
+    font-weight: bold;
+    max-width: 100%;
+    max-height: 20%;
+    border: 2px black;
+    border-style: solid;
+    margin: 3px;
+}
+.container{
+    border: 2px black;
+    border-style: solid;
+    margin: 5px;
+
+}
+.characters-gifs {
+    justify-content: space-between;
+}
+
+.feedback{
+    justify-content: center;
+}
 
 /* 2 cards
     left: choose character
