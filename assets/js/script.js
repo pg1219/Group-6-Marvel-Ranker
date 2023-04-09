@@ -44,7 +44,7 @@ function getCharsApi() {
         var charList = reply.data.results[0];
         charItem.textContent = charList.name;
         spanTag.append(charItem);
-        console.log(reply.data.results.name);
+        // console.log(reply.data.results.name);
 
         var imageList = reply.data.results[0];
 
@@ -52,40 +52,52 @@ function getCharsApi() {
         imageItem.style.width = "75px";
         imageItem.src =
           imageList.thumbnail.path + "." + imageList.thumbnail.extension;
-        imageItem.classList.add("char-img")        
-        imageItem.setAttribute("data-name", charList.name)
+        imageItem.classList.add("char-img");
+        imageItem.setAttribute("data-name", charList.name);
         charItem.append(imageItem);
-
-      }
-        )
-      };
+      });
   }
+}
 
- 
+spanTag.addEventListener("click", function (event) {
+  var element = event.target;
+  if (element.matches(".char-img")) {
+    console.log(element.dataset.name);
+    localStorage.setItem("name", element.dataset.name)
+    fetch(
+      "https://api.giphy.com/v1/gifs/search?api_key=7saPLMk09bQDFKz96FN2CCcwFpfGlp84&q=" +
+        element.dataset.name +
+        "&rating=g"
+    )
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data)
+      
+   var favUrl = data.data[0].url
+   console.log(favUrl)
+  var gifBox = document.querySelector(".gif-container")
+   var favImg = document.createElement("img");
+favImg.style.width = "700px";
+favImg.style.padding = "50px"
+favImg.src = fetch(favUrl)
+console.log(favImg.src)
+favImg.classList.add("char-gif");
+favImg.setAttribute("gif", favUrl);
+gifBox.append(favImg);
 
-        spanTag.addEventListener("click", function(event){
-          var element = event.target
-          if(element.matches(".char-img")){
-            console.log(element.dataset.name)
-          localStorage.setItem("name",element.dataset.name)  
-          fetch("https://api.giphy.com/v1/gifs/search?api_key=7saPLMk09bQDFKz96FN2CCcwFpfGlp84&q=" +
-          element.dataset.name + "&rating=g")
-          .then(function(response){
-            return response.json()
-          })
-          .then(function(data){
-            console.log(data)
-          })
-          }
-            
-          })
+});
+ } })
 
+// favImg.classList.add("card-body");
+// favImg.innerHTML = <img src = favUrl ></img>;
 
+// card.appendChild(cardBody);
+// fiveDayForecastEl.append(card);
 // data.data.url
 
 fetchCharsButton.addEventListener("click", getCharsApi);
-
-
 
 // 1010801 Ant Man scott lang
 // 1009187 black panther 32
