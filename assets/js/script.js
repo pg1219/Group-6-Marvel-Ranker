@@ -75,7 +75,10 @@ spanTag.addEventListener("click", function (event) {
       .then(function (data) {
         console.log(data)
       
-   var gifId = data.data[0].images.original.mp4
+
+
+
+   var gifId = data.data[2].images.original.url
    console.log(gifId)
   var gifBox = document.querySelector(".gif-container")
    var favImg = document.createElement("img");
