@@ -1,3 +1,4 @@
+ 
 var charTag = document.getElementById("charTags");
 var fetchCharsButton = document.getElementById("fetch-chars");
 var spanTag = document.getElementById("spanTags");
@@ -50,6 +51,7 @@ function getCharsApi() {
 
         var imageItem = document.createElement("img");
         imageItem.style.width = "75px";
+      
         imageItem.src =
           imageList.thumbnail.path + "." + imageList.thumbnail.extension;
         imageItem.classList.add("char-img")
@@ -87,14 +89,3 @@ function getCharsApi() {
 fetchCharsButton.addEventListener("click", getCharsApi);
 
 
-
-// 1010801 Ant Man scott lang
-// 1009187 black panther 32
-// 1017105 capt america
-// 1009282 dr strange
-// 1017107 hulk
-// 1010338 capt marvel
-// 1009610 spiderman
-// 1009664 Thor
-// 1009368 iron man
-// 1009189 Black widow
