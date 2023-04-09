@@ -57,6 +57,7 @@ function getCharsApi() {
         imageItem.classList.add("char-img")        
         imageItem.setAttribute("data-name", charList.name)
         charItem.append(imageItem);
+        charItem.prepend(imageItem);
 
       }
         )
