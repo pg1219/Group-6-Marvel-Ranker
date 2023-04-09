@@ -52,7 +52,7 @@ function getCharsApi() {
         imageItem.style.width = "75px";
         imageItem.src =
           imageList.thumbnail.path + "." + imageList.thumbnail.extension;
-        imageItem.classList.add("char-img")
+        imageItem.classList.add("char-img")        
         imageItem.setAttribute("data-name", charList.name)
         charItem.append(imageItem);
 
