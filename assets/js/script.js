@@ -1,14 +1,14 @@
 var charTag = document.getElementById("charTags");
-var fetchCharsButton = document.getElementById("fetch-chars");
+var fetchCharsButton = document.getElementById("btn");
 var spanTag = document.getElementById("spanTags");
 var publicKey = "fa6f290698944f5999102cfe84473ee5";
 var privateKey = "c7f11873efae271d19170c35a78fe6009417f858";
 var charIds = [
-  "1010801",
+  "1010802",
   "1009187",
-  "1017105",
+  "1009220",
   "1009282",
-  "1017107",
+  "1009351",
   "1010338",
   "1009610",
   "1009664",
@@ -43,11 +43,12 @@ function getCharsApi() {
         var charItem = document.createElement("h3");
         var charList = reply.data.results[0];
         charItem.textContent = charList.name;
+        console.log(charItem.textContent)
         spanTag.append(charItem);
-        // console.log(reply.data.results.name);
+
+        console.log(charList)
 
         var imageList = reply.data.results[0];
-
         var imageItem = document.createElement("img");
         imageItem.style.width = "75px";
         imageItem.src =
@@ -65,9 +66,7 @@ spanTag.addEventListener("click", function (event) {
     console.log(element.dataset.name);
     localStorage.setItem("name", element.dataset.name)
     fetch(
-      "https://api.giphy.com/v1/gifs/search?api_key=7saPLMk09bQDFKz96FN2CCcwFpfGlp84&q=" +
-        element.dataset.name +
-        "&rating=g")
+      "https://api.giphy.com/v1/gifs/search?api_key=7saPLMk09bQDFKz96FN2CCcwFpfGlp84&q=" + element.dataset.name + "&rating=g&limit=10")
 
       .then(function (response) {
         return response.json();
@@ -75,10 +74,12 @@ spanTag.addEventListener("click", function (event) {
       .then(function (data) {
         console.log(data)
       
-
-
-
-   var gifId = data.data[2].images.original.url
+      for (var i = 0; i < 1; i++){ 
+        var index = (Math.floor(Math.random() * data.data.length));
+      
+      console.log(index)
+      
+   var gifId = data.data[index].images.original.url
    console.log(gifId)
   var gifBox = document.querySelector(".gif-container")
    var favImg = document.createElement("img");
@@ -87,30 +88,19 @@ favImg.style.padding = "50px"
 favImg.src = gifId
 favImg.classList.add("char-gif");
 favImg.setAttribute("gif", gifId);
-gifBox.append(favImg);
+gifBox.append(favImg);}
 
 
 });
  } })
 
-//  favUrl = gifId
 
-// favImg.classList.add("card-body");
-// favImg.innerHTML = <img src = favUrl ></img>;
+fetchCharsButton.addEventListener("click", getCharsApi)
 
-// card.appendChild(cardBody);
-// fiveDayForecastEl.append(card);
-// data.data.url
-
-fetchCharsButton.addEventListener("click", getCharsApi);
-
-// 1010801 Ant Man scott lang
-// 1009187 black panther 32
-// 1017105 capt america
-// 1009282 dr strange
-// 1017107 hulk
-// 1010338 capt marvel
-// 1009610 spiderman
-// 1009664 Thor
-// 1009368 iron man
-// 1009189 Black widow
+const hideBtn = document.getElementById("btn");
+fetchCharsButton.onclick = function () {
+  if (hideBtn.style.display !== "none") {
+    hideBtn.style.display = "none";
+  } else {
+    hideBtn.style.display = "block";
+  }}
