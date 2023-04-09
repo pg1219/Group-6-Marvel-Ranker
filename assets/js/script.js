@@ -54,7 +54,7 @@ function getCharsApi() {
       
         imageItem.src =
           imageList.thumbnail.path + "." + imageList.thumbnail.extension;
-        imageItem.classList.add("char-img")
+        imageItem.classList.add("char-img")        
         imageItem.setAttribute("data-name", charList.name)
         charItem.append(imageItem);
 
@@ -70,9 +70,8 @@ function getCharsApi() {
           if(element.matches(".char-img")){
             console.log(element.dataset.name)
           localStorage.setItem("name",element.dataset.name)  
-          fetch("https://api.giphy.com/v1/gifs/random?api_key=7saPLMk09bQDFKz96FN2CCcwFpfGlp84&tag=" +
-          element.dataset.name + " avengers" +
-          "&rating=g")
+          fetch("https://api.giphy.com/v1/gifs/search?api_key=7saPLMk09bQDFKz96FN2CCcwFpfGlp84&q=" +
+          element.dataset.name + "&rating=g")
           .then(function(response){
             return response.json()
           })
