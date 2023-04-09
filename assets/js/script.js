@@ -54,7 +54,7 @@ function getCharsApi() {
           imageList.thumbnail.path + "." + imageList.thumbnail.extension;
         imageItem.classList.add("char-img");
         imageItem.setAttribute("data-name", charList.name);
-        charItem.append(imageItem);
+        charItem.prepend(imageItem);
       });
   }
 }
@@ -67,28 +67,30 @@ spanTag.addEventListener("click", function (event) {
     fetch(
       "https://api.giphy.com/v1/gifs/search?api_key=7saPLMk09bQDFKz96FN2CCcwFpfGlp84&q=" +
         element.dataset.name +
-        "&rating=g"
-    )
+        "&rating=g")
+
       .then(function (response) {
         return response.json();
       })
       .then(function (data) {
         console.log(data)
       
-   var favUrl = data.data[0].url
-   console.log(favUrl)
+   var gifId = data.data[0].images.original.mp4
+   console.log(gifId)
   var gifBox = document.querySelector(".gif-container")
    var favImg = document.createElement("img");
 favImg.style.width = "700px";
 favImg.style.padding = "50px"
-favImg.src = fetch(favUrl)
-console.log(favImg.src)
+favImg.src = gifId
 favImg.classList.add("char-gif");
-favImg.setAttribute("gif", favUrl);
+favImg.setAttribute("gif", gifId);
 gifBox.append(favImg);
+
 
 });
  } })
+
+//  favUrl = gifId
 
 // favImg.classList.add("card-body");
 // favImg.innerHTML = <img src = favUrl ></img>;
