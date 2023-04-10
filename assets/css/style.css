@@ -92,6 +92,15 @@ button {
     align-items: center;
     width: 100%
 }
+ feature/marvel-giphy
+img{
+    margin-left: 30px;
+    margin-right: 20px;
+    border-radius: 5px;
+    
+}
+  
+
 
 ul{
     float: left;
@@ -99,7 +108,6 @@ ul{
     padding: 10px
 
 }
-
 /* media queries - allie */
 
 @media screen and (max-width: 992px) {

@@ -1,3 +1,4 @@
+ 
 var charTag = document.getElementById("charTags");
 var fetchCharsButton = document.getElementById("btn");
 var spanTag = document.getElementById("spanTags");
@@ -51,6 +52,21 @@ function getCharsApi() {
 
         var imageList = reply.data.results[0];
         var imageItem = document.createElement("img");
+
+        feature/marvel-giphy
+        imageItem.style.width = "75px";
+      
+        imageItem.src =
+         imageList.thumbnail.path + "." + imageList.thumbnail.extension;
+        imageItem.classList.add("char-img")        
+        imageItem.setAttribute("data-name", charList.name)
+        // charItem.append(imageItem);
+        charItem.prepend(imageItem);
+
+      }
+        )
+      };
+
         imageItem.style.width = "100px";
         imageItem.src =
           imageList.thumbnail.path + "." + imageList.thumbnail.extension;
@@ -58,6 +74,7 @@ function getCharsApi() {
         imageItem.setAttribute("data-name", charList.name);
         charItem.prepend(imageItem);
       });
+main
   }
 }
 
@@ -105,6 +122,8 @@ spanTag.addEventListener("click", function (event) {
   }
 });
 
+feature/marvel-giphy
+
 fetchCharsButton.addEventListener("click", getCharsApi);
 
 const hideBtn = document.getElementById("btn");
@@ -115,3 +134,4 @@ fetchCharsButton.onclick = function () {
     hideBtn.style.display = "block";
   }
 };
+main
