@@ -1,15 +1,15 @@
  
 var charTag = document.getElementById("charTags");
-var fetchCharsButton = document.getElementById("fetch-chars");
+var fetchCharsButton = document.getElementById("btn");
 var spanTag = document.getElementById("spanTags");
 var publicKey = "475379ab26db81da4efbde3f762b8587";
 var privateKey = "256f300dba7897285cb040464d292143177ed5b9";
 var charIds = [
   "1010801",
   "1009187",
-  "1017105",
+  "1009220",
   "1009282",
-  "1017107",
+  "1009351",
   "1010338",
   "1009610",
   "1009664",
@@ -41,15 +41,19 @@ function getCharsApi() {
       .then(function (reply) {
         console.log(reply);
 
-        var charItem = document.createElement("h3");
+        var charItem = document.createElement("ul");
         var charList = reply.data.results[0];
         charItem.textContent = charList.name;
+        charItem.style.fontSize = "1vw";
+        console.log(charItem.textContent);
         spanTag.append(charItem);
-        console.log(reply.data.results.name);
+
+        console.log(charList);
 
         var imageList = reply.data.results[0];
-
         var imageItem = document.createElement("img");
+
+        feature/marvel-giphy
         imageItem.style.width = "75px";
       
         imageItem.src =
@@ -62,30 +66,72 @@ function getCharsApi() {
       }
         )
       };
+
+        imageItem.style.width = "100px";
+        imageItem.src =
+          imageList.thumbnail.path + "." + imageList.thumbnail.extension;
+        imageItem.classList.add("char-img");
+        imageItem.setAttribute("data-name", charList.name);
+        charItem.prepend(imageItem);
+      });
+main
   }
+}
 
- 
+spanTag.addEventListener("click", function (event) {
+  var element = event.target;
+  if (element.matches(".char-img")) {
+    console.log(element.dataset.name);
+    localStorage.setItem("name", element.dataset.name);
+    fetch(
+      "https://api.giphy.com/v1/gifs/search?api_key=7saPLMk09bQDFKz96FN2CCcwFpfGlp84&q=" +
+        element.dataset.name +
+        "&rating=g&limit=10"
+    )
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
 
-        spanTag.addEventListener("click", function(event){
-          var element = event.target
-          if(element.matches(".char-img")){
-            console.log(element.dataset.name)
-          localStorage.setItem("name",element.dataset.name)  
-          fetch("https://api.giphy.com/v1/gifs/search?api_key=7saPLMk09bQDFKz96FN2CCcwFpfGlp84&q=" +
-          element.dataset.name + "&rating=g")
-          .then(function(response){
-            return response.json()
-          })
-          .then(function(data){
-            console.log(data)
-          })
-          }
-            
-          })
+        for (var i = 0; i < 1; i++) {
+          var index = Math.floor(Math.random() * data.data.length);
 
+          console.log(index);
 
-// data.data.url
+          var gifId = data.data[index].images.original.url;
+          console.log(gifId);
+          var gifBox = document.querySelector(".gif-container");
+          var favImg = document.createElement("img");
+          favImg.style.width = "90%";
+          favImg.style.padding = "30px";
+          favImg.src = gifId;
+          favImg.classList.add("char-gif");
+          favImg.setAttribute("gif", gifId);
+          gifBox.append(favImg);
+
+          // if (gifId){
+          //   getCharsApi(gifId);
+          //   gifId.textContent = ""
+          //   gifId.value = ""  
+          // }else{
+          //   display = hidden
+          // }
+        }
+      });
+  }
+});
+
+feature/marvel-giphy
 
 fetchCharsButton.addEventListener("click", getCharsApi);
 
-
+const hideBtn = document.getElementById("btn");
+fetchCharsButton.onclick = function () {
+  if (hideBtn.style.display !== "none") {
+    hideBtn.style.display = "none";
+  } else {
+    hideBtn.style.display = "block";
+  }
+};
+main
