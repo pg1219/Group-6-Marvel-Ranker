@@ -114,3 +114,4 @@ fetchCharsButton.onclick = function () {
   }
 };
 
+
