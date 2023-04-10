@@ -63,9 +63,7 @@ function getCharsApi() {
         )
       };
   }
-
  
-
         spanTag.addEventListener("click", function(event){
           var element = event.target
           if(element.matches(".char-img")){
