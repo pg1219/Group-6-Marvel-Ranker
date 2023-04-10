@@ -2,8 +2,8 @@
 var charTag = document.getElementById("charTags");
 var fetchCharsButton = document.getElementById("fetch-chars");
 var spanTag = document.getElementById("spanTags");
-var publicKey = "fa6f290698944f5999102cfe84473ee5";
-var privateKey = "c7f11873efae271d19170c35a78fe6009417f858";
+var publicKey = "475379ab26db81da4efbde3f762b8587";
+var privateKey = "256f300dba7897285cb040464d292143177ed5b9";
 var charIds = [
   "1010801",
   "1009187",
