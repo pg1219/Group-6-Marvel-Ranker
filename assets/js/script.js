@@ -52,9 +52,7 @@ function getCharsApi() {
 
         var imageList = reply.data.results[0];
         var imageItem = document.createElement("img");
-
-        feature/marvel-giphy
-        imageItem.style.width = "75px";
+        imageItem.style.width = "100px";
       
         imageItem.src =
          imageList.thumbnail.path + "." + imageList.thumbnail.extension;
@@ -63,21 +61,9 @@ function getCharsApi() {
         // charItem.append(imageItem);
         charItem.prepend(imageItem);
 
-      }
-        )
-      };
-
-        imageItem.style.width = "100px";
-        imageItem.src =
-          imageList.thumbnail.path + "." + imageList.thumbnail.extension;
-        imageItem.classList.add("char-img");
-        imageItem.setAttribute("data-name", charList.name);
-        charItem.prepend(imageItem);
-      });
-main
-  }
-}
-
+      })
+    }
+ };
 spanTag.addEventListener("click", function (event) {
   var element = event.target;
   if (element.matches(".char-img")) {
@@ -110,19 +96,12 @@ spanTag.addEventListener("click", function (event) {
           favImg.setAttribute("gif", gifId);
           gifBox.append(favImg);
 
-          // if (gifId){
-          //   getCharsApi(gifId);
-          //   gifId.textContent = ""
-          //   gifId.value = ""  
-          // }else{
-          //   display = hidden
-          // }
+
         }
       });
   }
 });
 
-feature/marvel-giphy
 
 fetchCharsButton.addEventListener("click", getCharsApi);
 
@@ -134,4 +113,5 @@ fetchCharsButton.onclick = function () {
     hideBtn.style.display = "block";
   }
 };
-main
+
+
