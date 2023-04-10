@@ -49,7 +49,8 @@ h4 {
   border-style: solid;
   margin: 5px;
   width: 50%;
-  border-radius: 10px
+  border-radius: 10px;
+
 }
 
 .gif-container {
@@ -57,7 +58,7 @@ h4 {
   border-style: solid;
   margin: 5px;
   width: 40%;
-  border-radius: 10px
+  border-radius: 10px;
 }
 .characters-gifs {
   justify-content: space-between;
@@ -65,6 +66,7 @@ h4 {
 
 .feedback {
   justify-content: center;
+  
 }
 
 img {
@@ -97,24 +99,32 @@ ul{
     padding: 10px
 
 }
-/* 2 cards
-    left: choose character
-    right: generate giph */
 
-/* generate button: 15 items from GIPHY api in any order */
+/* media queries - allie */
 
-/* media query: flex-direction: column; */
+@media screen and (max-width: 992px) {
+    main{
+      flex-wrap: wrap;
+      flex-direction: column;
+      
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    main{
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+  
+    section{
+      flex-direction: column;
+    }
+    
+  }
+  
+  @media screen and (max-width: 576px) {
+      flex-wrap: wrap;
+      flex-direction: column;
+    
+  }
 
-/* media query: flex-direction: column; */
-
-/* we want: progress bar, dropdown OR table to count from 1 - 15 */
-
-/* 2 cards
-    left: choose character
-    right: generate giph */
-
-/* generate button: 15 items from GIPHY api in any order */
-
-/* media query: flex-direction: column; */
-
-/* media query: flex-direction: column; */
