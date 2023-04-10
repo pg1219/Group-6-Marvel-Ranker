@@ -123,8 +123,9 @@ ul{
   }
   
   @media screen and (max-width: 576px) {
+    main{
       flex-wrap: wrap;
       flex-direction: column;
-    
+    }
   }
 
