@@ -1,39 +1,102 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
-
 /* .container-right{
     margin-right: 0;
 
 
 } */
-section{
-    display: flex;
-    flex-wrap: wrap;
+section {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-h1{
-    font-size:larger;
-    font-weight: bold;
-    max-width: 100%;
-    max-height: 20%;
-    border: 2px black;
-    border-style: solid;
-    margin: 3px;
+body{
+    background-color: aliceblue;
 }
-.container{
-    border: 2px black;
-    border-style: solid;
-    margin: 5px;
+h1 {
+  font-size: 64px;
+  font-weight: bold;
+  max-width: 100%;
+  max-height: 20%;
+  border: 2px black;
+  border-style: solid;
+  margin: 3px;
+  text-align: center;
+  background-color: red;
+  color: rgb(255, 255, 255);
+}
+h2 {
+  padding-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 3px;
+  color: rgb(0, 0, 180);
+}
+#header{
+    text-align: center;
+}
 
+h4 {
+  padding-top: 10px;
+  max-width: 100%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(0, 0, 180);
+}
+.container {
+  border: 2px black;
+  border-style: solid;
+  margin: 5px;
+  width: 50%;
+  border-radius: 10px
+}
+
+.gif-container {
+  border: 2px black;
+  border-style: solid;
+  margin: 5px;
+  width: 40%;
+  border-radius: 10px
 }
 .characters-gifs {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
-.feedback{
+.feedback {
+  justify-content: center;
+}
+
+img {
+  margin-left: 30px;
+  margin-right: 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+button {
+  font-size: 80px;
+  color: rgb(8, 8, 0);
+  background-color: rgb(255, 251, 0);
+  /* margin: 0 10px 0 10px ; */
+  text-align: center;
+  border-radius: 25px;
+  text-decoration: underline;
+}
+
+#btn-cont{
+    display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%
 }
 
+ul{
+    float: left;
+    width: 50%;
+    padding: 10px
+
+}
 /* 2 cards
     left: choose character
     right: generate giph */
