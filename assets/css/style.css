@@ -10,6 +10,9 @@ section {
   flex-wrap: wrap;
 }
 
+body{
+    background-color: aliceblue;
+}
 h1 {
   font-size: 64px;
   font-weight: bold;
@@ -20,14 +23,17 @@ h1 {
   margin: 3px;
   text-align: center;
   background-color: red;
-  color: rgb(112, 208, 240);
+  color: rgb(255, 255, 255);
 }
 h2 {
   padding-top: 10px;
-  font-size: larger;
+  font-size: 24px;
   font-weight: bold;
   margin: 3px;
-  color: blue;
+  color: rgb(0, 0, 180);
+}
+#header{
+    text-align: center;
 }
 
 h4 {
@@ -36,18 +42,22 @@ h4 {
   text-align: center;
   font-size: 24px;
   font-weight: bold;
-  color: blue;
+  color: rgb(0, 0, 180);
 }
 .container {
   border: 2px black;
   border-style: solid;
   margin: 5px;
+  width: 50%;
+  border-radius: 10px
 }
 
 .gif-container {
   border: 2px black;
   border-style: solid;
   margin: 5px;
+  width: 40%;
+  border-radius: 10px
 }
 .characters-gifs {
   justify-content: space-between;
@@ -61,17 +71,32 @@ img {
   margin-left: 30px;
   margin-right: 20px;
   border-radius: 10px;
+  display: inline-block;
 }
 
 button {
-  font-size: 100px;
+  font-size: 80px;
   color: rgb(8, 8, 0);
   background-color: rgb(255, 251, 0);
-  margin: 10px;
+  /* margin: 0 10px 0 10px ; */
   text-align: center;
   border-radius: 25px;
+  text-decoration: underline;
 }
 
+#btn-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%
+}
+
+ul{
+    float: left;
+    width: 50%;
+    padding: 10px
+
+}
 /* 2 cards
     left: choose character
     right: generate giph */
